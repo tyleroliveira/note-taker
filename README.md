@@ -7,7 +7,14 @@ this is a note taker app that can be used to write and save notes. this app uses
 - [Credits](#credits)
 - [License](#license)
 ## Installation
-clone repo. run npm i. run node server.js. navigate to http://localhost:3001 in your browser. 
+Navigate to https://lit-beyond-06817.herokuapp.com in your browser to run the app from the deployed heroku server
+
+Or to run the app locally do the following:
+clone repo 
+run npm i
+run node server.js 
+navigate to http://localhost:3001 in your browser 
+
 ## Usage
 enter a note title and text, left click floppy disk icon to save notes, left click trashcan icon to delete notes, left click plus sign to reset input note fields, left click on a saved note title to see its text.
 ## License Badge
