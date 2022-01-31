@@ -21,23 +21,23 @@ app.post("/api/notes", function (req, res) {
   req.body.id = allNotes[0];
   allNotes[0] = uuid();
   allNotes.push(newNote);
-  fs.writeFileSync(
-    path.join(__dirname, "./db/db.json"),
-    JSON.stringify(allNotes)
-  );
-  res.json(newNote);
+  fs.writeFile("./db/db.json", JSON.stringify(allNotes), (err) =>
+  err ?
+  console.error(err) :
+  res);
+  res.send("saved");
 });
 app.delete("/api/notes/:id", function (req, res) {
   for (let i = 0; i < allNotes.length; i++) {
     if (allNotes[i].id == req.params.id) {
       allNotes.splice(i, 1);
-      fs.writeFileSync(
-        path.join(__dirname, "./db/db.json"),
-        JSON.stringify(allNotes)
-      );
+      fs.writeFile("./db/db.json", JSON.stringify(allNotes), (err) =>
+      err ?
+      console.error(err) :
+      res);
     }
   }
- res.json(allNotes);
+ res.send("deleted");
 });
 app.listen(PORT, () => {
   console.log(`server is listening on port ${PORT}`);
